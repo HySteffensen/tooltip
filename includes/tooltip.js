@@ -14,7 +14,7 @@ $(document).ready(function() {
             $('#tooltip_container').html(newHTML);
         }
 
-        $('#tooltip_container').css('display', 'block');
+        $('#tooltip_container').css({'display':'block','opacity':0}).animate({opacity:1},250);
 
     }).mousemove(function(e){
         var toolTipWidth = $('#tooltip_container').outerWidth();
@@ -34,9 +34,9 @@ $(document).ready(function() {
         }
 
     }).mouseleave(function(e){
-        setTimeout(function() {
+        $('#tooltip_container').animate({opacity:0},250, function() {
             $('#tooltip_container').css('display', 'none').html('');
-        }, 500)
+        });
     });
 });
 
