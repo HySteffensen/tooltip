@@ -33,9 +33,9 @@ $(document).ready(function() {
             $('#tooltip_container').css('top', (e.pageY + 20) + 'px');
         }
 
-    }).mouseleave(function(e){
+    }).mouseout(function(e){
         $('#tooltip_container').animate({opacity:0},250, function() {
-            $('#tooltip_container').css('display', 'none').html('');
+            $('#tooltip_container').css('display', 'none');
         });
     });
 });
