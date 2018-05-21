@@ -14,6 +14,8 @@ $(document).ready(function() {
             $('#tooltip_container').html(newHTML);
         }
 
+        $('#tooltip_container').css('display', 'block');
+
     }).mousemove(function(e){
         var toolTipWidth = $('#tooltip_container').outerWidth();
         var toolTipHeight = $('#tooltip_container').outerHeight();
@@ -31,10 +33,11 @@ $(document).ready(function() {
             $('#tooltip_container').css('top', (e.pageY + 20) + 'px');
         }
 
-    }).mouseout(function(e){
-
+    }).mouseleave(function(e){
+        setTimeout(function() {
+            $('#tooltip_container').css('display', 'none').html('');
+        }, 500)
     });
 });
-
 
 
